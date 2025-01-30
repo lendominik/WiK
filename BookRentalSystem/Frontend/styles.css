@@ -1,0 +1,22 @@
+html, body {
+  height: 100%; /* Cała wysokość widoku przeglądarki */
+  margin: 0; /* Usuń domyślne marginesy */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Minimum wysokości na cały ekran */
+}
+
+.container {
+  flex: 1; /* Wypełnia pozostałą przestrzeń między nagłówkiem a stopką */
+}
+
+footer {
+  background-color: #343a40; /* Tło stopki */
+  color: #fff; /* Kolor tekstu */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  padding: 1rem 0; /* Wewnętrzne odstępy */
+  margin-top: auto; /* Wypycha stopkę na dół */
+}

@@ -1,0 +1,69 @@
+@BookRentalSystem_HostAddress = http://localhost:5075
+
+
+POST {{BookRentalSystem_HostAddress}}/api/v1/category/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Category 1",
+    "description": "Category 1 Description"
+}
+
+###
+
+GET {{BookRentalSystem_HostAddress}}/api/v1/category/1
+Accept: application/json
+
+###
+
+DELETE {{BookRentalSystem_HostAddress}}/api/v1/category/1
+Accept: application/json
+
+###
+
+PUT {{BookRentalSystem_HostAddress}}/api/v1/category/1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Updated Category",
+    "description": "Updated Description"
+}
+
+###
+
+POST {{BookRentalSystem_HostAddress}}/api/v1/book/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "title": "Sample Book Title",
+    "categoryId": 1,
+    "authorId": 1,
+    "publisherId": 1,
+    "description": "This is a sample book description."
+}
+
+###
+
+GET {{BookRentalSystem_HostAddress}}/api/v1/book/1
+Accept: application/json
+
+###
+
+DELETE {{BookRentalSystem_HostAddress}}/api/v1/book/1
+Accept: application/json
+
+###
+
+PUT {{BookRentalSystem_HostAddress}}/api/v1/book/1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "title": "Updated Book Title",
+    "description": "Updated book description."
+}
+
+###

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publishers - Book Rental System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Nawigacja -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Book Rental</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="book.html">Books</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="category.html">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="publisher.html">Publishers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="author.html">Authors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="review.html">Reviews</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Zawartość -->
+    <div class="container my-4">
+      <h2 class="mb-4">Publishers</h2>
+
+      <!-- Lista wydawców -->
+      <div>
+        <button
+          class="btn btn-primary mb-3"
+          id="fetch-publishers"
+          style="display: none"
+        >
+          Load Publishers
+        </button>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="publishers-list">
+            <!-- Rekordy wydawców będą tutaj -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Formularz dodawania/edycji wydawcy -->
+      <h3 id="form-title">Add a New Publisher</h3>
+      <form id="publisher-form">
+        <div class="mb-3">
+          <label for="publisher-name" class="form-label">Publisher Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="publisher-name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="publisher-description" class="form-label"
+            >Description</label
+          >
+          <textarea
+            class="form-control"
+            id="publisher-description"
+            rows="3"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Add Publisher</button>
+      </form>
+    </div>
+
+    <!-- Stopka -->
+    <footer class="bg-dark text-light text-center py-3">
+      <p>© 2025 BookRentalSystem. All rights reserved.</p>
+    </footer>
+
+    <!-- Skrypty -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="publisher.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+services:
+  bookrentalsystem:
+    image: bookrentalsystemapi
+    container_name: bookrentalsystemapi
+    build:
+      context: .
+      dockerfile: BookRentalSystem/Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - bookrentalsystem-db
+    networks:
+      - backend-network
+      - frontend-network
+
+  bookrentalsystem-db:
+    image: mcr.microsoft.com/mssql/server:2022-CU16-ubuntu-22.04
+    container_name: bookrentalsystemdb
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Password@1"
+    ports:
+      - "1433:1433"
+    volumes:
+      - bookrentalsystem-data:/var/opt/mssql
+    networks:
+      - backend-network
+
+  frontend:
+    image: ${DOCKER_REGISTRY-}frontend
+    container_name: bookrentalsystemfrontend
+    build:
+      context: .
+      dockerfile: Frontend/Dockerfile
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - bookrentalsystem-data:/var/opt/mssql
+    networks:
+      - frontend-network
+
+volumes:
+  bookrentalsystem-data:
+
+networks:
+  backend-network:
+  frontend-network:

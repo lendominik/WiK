@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authors - Book Rental System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Nawigacja -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Book Rental</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="book.html">Books</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="category.html">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="publisher.html">Publishers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="author.html">Authors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="review.html">Reviews</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Zawartość -->
+    <div class="container my-4">
+      <h2 class="mb-4">Authors</h2>
+
+      <!-- Lista autorów -->
+      <div>
+        <button
+          class="btn btn-primary mb-3"
+          id="fetch-authors"
+          style="display: none"
+        >
+          Load Authors
+        </button>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Nationality</th>
+              <th>Date of Birth</th>
+              <th>Date of Death</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="authors-list">
+            <!-- Rekordy autorów będą tutaj -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Formularz dodawania/edycji autora -->
+      <h3 id="form-title">Add a New Author</h3>
+      <form id="author-form">
+        <div class="mb-3">
+          <label for="first-name" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="first-name" required />
+        </div>
+        <div class="mb-3">
+          <label for="last-name" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="last-name" required />
+        </div>
+        <div class="mb-3">
+          <label for="nationality" class="form-label">Nationality</label>
+          <input type="text" class="form-control" id="nationality" />
+        </div>
+        <div class="mb-3">
+          <label for="date-of-birth" class="form-label">Date of Birth</label>
+          <input type="date" class="form-control" id="date-of-birth" />
+        </div>
+        <div class="mb-3">
+          <label for="date-of-death" class="form-label">Date of Death</label>
+          <input type="date" class="form-control" id="date-of-death" />
+        </div>
+        <button type="submit" class="btn btn-success" id="save-button">
+          Add Author
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary ms-2"
+          id="cancel-edit"
+          style="display: none"
+        >
+          Cancel
+        </button>
+      </form>
+    </div>
+
+    <!-- Stopka -->
+    <footer class="bg-dark text-light text-center py-3">
+      <p>© 2025 BookRentalSystem. All rights reserved.</p>
+    </footer>
+
+    <!-- Skrypty -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="author.js"></script>
+  </body>
+</html>
